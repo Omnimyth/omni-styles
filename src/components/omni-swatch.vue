@@ -1,5 +1,5 @@
 <template>
-  <div class="swatch">
+  <div class="swatch" :style="'width:' + width">
     <div class="color-block" v-if="hex" :style="'background-color: ' + hex">
       <input type="text" readonly  :class="'color-code' + ((dark)? ' dark':'')" v-if="showCode" @click="$event.target.select()" :value="hex" />
     </div>
@@ -9,11 +9,11 @@
     <div class="color-block" v-else-if="rgb" :style="'background-color: ' + rgb">
       <input type="text" readonly  :class="'color-code' + ((dark)? ' dark':'')" v-if="showCode" @click="$event.target.select()" :value="rgb" />
     </div>
-    <div class="color-block" v-else>
+    <div class="color-block error" v-else>
       <span class="color-code">Invalid color code</span>
     </div>
-    <div class="color-label">
-      <span class="color-name" v-if="name">{{ name }} <input type="text" readonly v-if="label" :size="label.length" @click="$event.target.select()" :value="label" /></span>
+    <div class="color-label" v-if="name">
+      <span class="color-name">{{ name }} <input type="text" readonly v-if="label" :size="label.length" @click="$event.target.select()" :value="label" /></span>
     </div>
   </div>
 </template>
@@ -22,13 +22,19 @@
 export default {
   name: "omni-swatch",
   props: {
-    width: String,
+    width: {
+      type: String,
+      default: "100%"
+    },
     hex: String,
-    rgba: Object,
-    rgb: Object,
+    rgba: String,
+    rgb: String,
     name: String,
     label: String,
-    dark: Boolean,
+    dark: {
+      type: Boolean,
+      default: false
+    },
     showCode: {
       type: Boolean,
       default: false
@@ -62,6 +68,10 @@ export default {
       text-transform: uppercase
       &.dark
         color: $label-light
+    &.error
+      background-color: #880000
+      .color-code
+        color: #FFFFFF
   .color-label
     display: inline-block
     padding: $spacing-s
@@ -87,7 +97,7 @@ export default {
       border: none
       width: auto
 
-html.dark
+.dark
   .swatch
     border: 1px solid rgba($color-border, 0.2)
     .color-label

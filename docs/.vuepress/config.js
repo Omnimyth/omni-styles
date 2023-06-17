@@ -2,6 +2,7 @@ import { defineUserConfig } from 'vuepress';
 import { searchPlugin } from '@vuepress/plugin-search';
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { defaultTheme } from '@vuepress/theme-default';
+import { shikiPlugin } from '@vuepress/plugin-shiki'
 import { getDirname, path } from '@vuepress/utils'
 
 export default defineUserConfig({
@@ -40,7 +41,6 @@ export default defineUserConfig({
                 ],
             },
         ],
-        sidebarDepth: 1,
         sidebar: {
             '/intro/': [
                 '/intro/',
@@ -67,6 +67,8 @@ export default defineUserConfig({
                 }
             ],
         },
+        sidebarDepth: 1,
+        smoothScroll: true
     }),
     head: [
         [
@@ -83,6 +85,9 @@ export default defineUserConfig({
         }),
         registerComponentsPlugin({
             componentsDir: path.resolve(__dirname, '../../src/components/')
+        }),
+        shikiPlugin({
+            theme: 'github-dark'
         }),
     ]
 })
