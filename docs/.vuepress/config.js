@@ -7,6 +7,7 @@ import { getDirname, path } from '@vuepress/utils'
 
 export default defineUserConfig({
     lang: 'en-US',
+    base: '/omni-styles/',
     title: 'Component Library',
     // description: 'Just playing around',
     theme: defaultTheme({
