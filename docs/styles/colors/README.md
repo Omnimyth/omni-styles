@@ -7,7 +7,7 @@
 #### Accent
 <omni-swatch hex="#73695e" name="Ancient Lock" label="$accent-light" :show-code="true" :dark="true" />
 #### Background
-<omni-swatch hex="#ffffff" name="Bright White" label="$background-light" :show-code="true" :dark="false" />
+<omni-swatch hex="#ead1bc" name="White Peach" label="$background-light" :show-code="true" :dark="false" />
 #### Text
 <omni-swatch hex="#020b0e" name="Black Knight" label="$text-light" :show-code="true" :dark="true" />
 
