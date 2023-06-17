@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-dd2d2c28","path":"/styles/typography/","title":"Typography","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1686952378000,"contributors":[{"name":"Mark Adkins","email":"mark@bymark.co","commits":1}]},"filePathRelative":"styles/typography/README.md"}');export{t as data};

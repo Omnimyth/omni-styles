@@ -1,0 +1,1 @@
+import{_ as a,o as t,c as o,a as e,b as r}from"./app-e31ee9a1.js";const c={},n=e("h1",{id:"typography",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#typography","aria-hidden":"true"},"#"),r(" Typography")],-1),s=[n];function _(d,h){return t(),o("div",null,s)}const l=a(c,[["render",_],["__file","index.html.vue"]]);export{l as default};
